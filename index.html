@@ -6,7 +6,6 @@
     <title>ASCEND Club Schedule</title>
     <style>
         body {
-            background-color: #fafafa; /* light background */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -14,6 +13,10 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            background-image: url('https://media.istockphoto.com/id/1502846052/photo/textured-soccer-game-field-with-neon-fog-center-midfield.jpg?s=612x612&w=0&k=20&c=LPSo6ps1NfZ_xviL0tmhnnrcLjjFXAQhsYr3qAOfviY=');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .container {
@@ -24,6 +27,7 @@
             border-radius: 8px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             margin-top: 40px;
+            opacity: 0.95; /* Slight transparency to show background image through */
         }
 
         .header {
@@ -145,7 +149,6 @@
     
         return scheduleData;
     }
-
 
     function addSchedule(scheduleData, day, time, location, sport) {
         const schedule = {
