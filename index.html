@@ -122,7 +122,7 @@
 </div>
 
 <script>
-    const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5U-kYeEl5v6E7sKY2lwFprx9hkxmmWnuOvqkAWpqpyqaVwXAiblbw9Vz_pYewKuH95k10O_yA1hkH/pub?gid=0&single=true&output=csv';
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5U-kYeEl5v6E7sKY2lwFprx9hkxmmWnuOvqkAWpqpyqaVwXAiblbw9Vz_pYewKuH95k10O_yA1hkH/pub?gid=0&single=true&output=csv';
     
     function fetchAndRenderSchedule() {
         fetch(CSV_URL)
@@ -202,12 +202,29 @@
                 location.innerText = schedule.location;
                 scheduleItem.appendChild(location);
 
+                // Add event listener to highlight same sport items when clicked
+                scheduleItem.addEventListener('click', () => highlightSport(schedule.sport));
+
                 dayContainer.appendChild(scheduleItem);
             });
 
             container.appendChild(dayContainer);
         });
     }
+
+    function highlightSport(sportName) {
+    console.log(sportName);  // This should log the clicked sport name
+    const scheduleItems = document.querySelectorAll('.schedule-item');
+    scheduleItems.forEach(item => {
+        const sport = item.querySelector('p:first-child').innerText;
+        if (sport === sportName) {
+            item.classList.toggle('highlight');
+        } else {
+            item.classList.remove('highlight');
+        }
+    });
+}
+
 
     function parseTime(timeString) {
         const timeParts = timeString.split(':');
