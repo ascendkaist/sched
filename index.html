@@ -128,20 +128,24 @@
 
     function processCSVData(rows) {
         const scheduleData = [];
-
+    
         rows.slice(1).forEach(row => {
             const cells = row.split(',');
-
+    
             if (cells[0] && cells[1] && cells[2] && cells[3]) {
                 addSchedule(scheduleData, cells[1], cells[2], cells[3], cells[0]);
             }
             if (cells[4] && cells[5] && cells[6]) {
                 addSchedule(scheduleData, cells[4], cells[5], cells[6], cells[0]);
             }
+            if (cells[7] && cells[8] && cells[9]) {
+                addSchedule(scheduleData, cells[7], cells[8], cells[9], cells[0]);
+            }
         });
-
+    
         return scheduleData;
     }
+
 
     function addSchedule(scheduleData, day, time, location, sport) {
         const schedule = {
