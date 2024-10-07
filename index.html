@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASCEND Club Schedule</title>
     <style>
+        
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -23,11 +24,12 @@
             width: 95%;
             max-width: 1200px;
             padding: 20px;
-            background-color: white;
+            background-color: rgba(255,255,255,0.9);
+            #background-color: white;
             border-radius: 8px;
             box-shadow: 0px 4px 100px rgba(249, 187, 4, 0.8);
             margin-top: 13%;
-            opacity: 0.95; /* Slight transparency to show background image through */
+            #opacity: 0.95; /* Slight transparency to show background image through */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -55,7 +57,8 @@
         }
 
         .day-container {
-            background-color: #fff;
+            background-color: rgba(255,255,255,0.7);
+            #background-color: #fff;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             padding: 15px;
@@ -94,6 +97,10 @@
         .schedule-item .location {
             font-style: italic;
             color: #999;
+        }
+
+        .highlight {
+            background-color: #FFD700; /* Highlight color */
         }
 
         @media (max-width: 800px) {
